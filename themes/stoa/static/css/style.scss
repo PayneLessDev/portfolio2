@@ -1,0 +1,294 @@
+/* Themeing */
+/* Light */
+$backgroundLight: #fafafa;
+$backgroundLightR: radial-gradient(circle, rgba(250,250,250,1,) 0%, rgba(230,230,230,1) 100%);
+$textLight: #494b53;
+$accentLight: #a626a4;
+
+/* Dark */
+$backgroundDark: #000000;
+$backgroundDarkR: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(20,20,20,1) 100%);
+$textDark: #abb2bf;
+$accentDark: #c678dd;
+
+$shadow: rgba(73,75,83,0.7);
+
+/* Font */
+$fontHeading: 'Hahmlet', serif;
+$fontMain: 'Inter', sans-serif;
+$fontCode: 'JetBrains Moni', monospace;
+
+/* Mixins */
+@mixin themeLight($themeLight: light){
+    background: $backgroundLight;
+    background: $backgroundLightR;
+    color: $textLight;
+
+}
+
+@mixin themeDark($themeDark: dark){
+    background: $backgroundDark;
+    background: $backgroundDarkR;
+    color: $textDark;
+}
+
+/* Body Themes */
+body{
+    @include themeLight;
+    font-family: $fontMain;
+}
+
+body.dark-theme{
+    @include themeDark;
+    font-family: $fontMain;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        @include themeDark;
+        font-family: $fontMain;
+    }
+
+    body.light-theme {
+        @include themeLight;
+        font-family: $fontMain;
+  }
+}
+
+/* Basic Styling */
+h1,h2,h3,h4,h5,h6{
+    font-family: $fontHeading;
+}
+
+a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+}
+
+ul, li{
+    list-style: none;
+}
+
+.fas{
+    margin: 10px 10px 0px 10px;
+}
+
+/* Flex Containers */
+#flexContainer{
+    display: flex;
+    flex-direction: column;
+    max-width: 120ch;
+    margin-right: auto;
+    margin-left: auto;
+}
+#flexHeader{
+    height: 15vh;
+}
+
+#flexMain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+#flexFooter{
+    display: flex;
+    height: 5vh;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Grids */
+#gridHeader{
+    display: grid;
+    grid-template-areas:
+    "toggle title hamburger"
+    "subtitle subtitle subtitle"
+    "social social social";
+    grid-template-columns: 5% 90% 5%;
+}
+#toggle{
+    grid-area: toggle;
+    #tgl{
+        display: none;
+    }
+}
+#title{
+    grid-area: title;
+    h1{
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+}
+#hamburger{
+    grid-area: hamburger;
+    #burger{
+        display: none;
+    }
+}
+#subtitle{
+    grid-area: subtitle;
+    text-align: center;
+    h2{
+        padding: 0;
+        margin: 0;
+    }
+}
+#social{
+    grid-area: social;
+    .social-nav{
+        ul{
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            li{
+                margin: 5px 10px 0 10px;
+            }
+        }
+    }
+}
+.pointer{
+    cursor: pointer;
+}
+/* Profile Image */
+.profile{
+    text-align:center;
+    img{
+        border-radius: 50%;
+        width: 20rem;
+        margin-bottom: 50px;
+        box-shadow: 0 0 50px 0 $shadow;
+    }
+    p{
+        margin: 5px 0 5px 0;
+    }
+    blockquote{
+        padding: 10px;
+        box-shadow: 0 0 20px 0 $shadow;
+        cite{
+            font-style: italic;
+        }
+    }
+}
+
+#overlay{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    transition: 0.9s;
+    background: var(--rad-light);
+}
+.overlay-content{
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    list-style: none;
+}
+.overlay>a{
+  padding: 8px;
+  display: block;
+  transition: 0.3s;
+}
+/* Contact Page */
+.contact-form{
+    width: 60ch;
+    box-shadow: 0 0 20px 0 rgba(73,75,83,0.7);
+    text-align: center;
+}
+.contact-form *{
+    padding: 0;
+    margin: 0;
+}
+.contact-form div{
+    padding: 5px 10px 5px 10px;
+    display: grid;
+}
+
+/* Blog Page */
+.container-blog{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 5% 95%;
+    grid-template-areas:
+    "title title"
+    "sidebar main";
+}
+.container-blog h1{
+    margin: 0;
+}
+.blog-title{
+    text-align: center;
+    grid-area: title;
+}
+.blog-aside{
+    grid-area: sidebar;
+}
+.blog-main{
+    grid-area: main;
+    padding: 1rem;
+}
+.resume-page{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 5% 25% 35% 35%;
+    grid-template-areas:
+    ". btn ."
+    "skill1 skill2 skill3"
+    "col1 col2 col3"
+    "col1 col2 col3";
+}
+
+.resume-page p{
+    padding: 10px;
+}
+.skill1{
+    grid-area: skill1;
+    padding: 10px;
+    text-align: center;
+}
+
+.skill2{
+    grid-area: skill2;
+    text-align: center;
+}
+.skill3{
+    grid-area: skill3;
+    text-align: center;
+}
+
+.resume-btn{
+    grid-area: btn;
+}
+
+.col1{
+    grid-area: col1;
+}
+
+.col2{
+    grid-area: col2;
+}
+
+.col3{
+    grid-area: col3;
+}
+
+.image-blog{
+    border-radius: 50%;
+    width: 20rem;
+    margin-bottom: 50px;
+}
+
+

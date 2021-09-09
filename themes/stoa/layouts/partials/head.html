@@ -1,0 +1,50 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Author and Description -->
+    <meta name="author" content="Adam Payne">
+    <meta name="description" content="Sydney Based Full Stack Developer. HTML, CSS, JS, Rails & MERN">
+
+    <!-- Open Graph Data -->
+    <meta property="og:title" content="PayneLessDev">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Sydney Based Full Stack Developer. HTML, CSS, JS, Rails & MERN">
+    <meta property="og:url" content="paynlessdev.tech">
+    <meta property="og:locale" content ="en_au">
+    <meta property="og:image" content="https://optimistic-varahamihira-178b69.netlify.app/img/profile.jpg">
+    <meta property="og:image:alt" content="Headshot">
+
+    <!-- Twitter Summery Card -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="@PayneLessDev"/>
+    <meta name="twitter:title" content="PayneLessDev"/>
+    <meta name="twitter:description" content="Sydney Based Full Stack Developer. HTML, CSS, JS, Rails & MERN"/>
+    <meta name="twitter:image" content="https://www.optimistic-varahamihira-178b69.netlify.app/img/profile.jpg"/>
+    <meta name="twitter:image:alt" content="Headshot"/>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#9f00a7">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <meta name="msapplication-TileColor" content="#9f00a7">
+    <meta name="msapplication-TileImage" content="/img/mstile-144x144.png">
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <meta name="theme-color" content="#9f00a7">
+
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css" media="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&family=Inter:wght@100&family=JetBrains+Mono:wght@100&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/383c4a61fe.js" crossorigin="anonymous"></script>
+
+    {{ $title := print .Site.Title " | " .Title }}
+    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+    <title>{{ $title }}</title>
+</head>

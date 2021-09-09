@@ -1,0 +1,6 @@
+baseURL = 'www.paynelessdev.tech'
+languageCode = 'en-au'
+title = 'PayneLessDev'
+theme = 'stoa'
+
+relativeURL = 'true'

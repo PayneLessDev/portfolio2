@@ -1,0 +1,96 @@
+<html>
+    {{- partial "head.html" . -}}
+    <body id="flexContainer">
+
+    <header id="flexHeader">
+    {{ partial "header.html" . }}
+    </header>
+
+    <main id="flexMain">
+<div class="contact-form">
+            <h1>Contact</h1>
+            <ul>
+                <li>221B Baker Street</li>
+                <li>+61 406 864 172</li>
+                <li>adam@paynelessdev.tech</li>
+            </ul>
+            <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+                <h2>Email Me</h2>
+                <fieldset>
+                        <div>
+                            <label for="contact-name">Name: *</label>
+                            <input id="contact-name" type="text" name="name" required>
+                        </div>
+
+                        <div>
+                            <label for="contact-company">Company:</label>
+                            <input id="contact-company" type="text" name="company">
+                        </div>
+
+                        <div>
+                            <label for="contact-email">Email: *</label>
+                            <input id="contact-email" type="email" name="email" required>
+                        </div>
+
+                        <div>
+                            <label for="contact-tel">Phone: *</label>
+                            <input id="contact-tel" type="tel" name="phone" required>
+                        </div>
+
+                        <div>
+                            <label for="contact-subject">Subject: *</label>
+                            <select id="contact-subject" name="subject" required>
+                                <option value="commission">Commission</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="employment">Employment</option>
+                                <option value="general">General</option>
+                                <option value="other" selected>Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="contact-pronoun">Pronoun: </label>
+                            <select id="contact-pronoun" name="pronoun">
+                                <option value="they-them">They/Them</option>
+                                <option value="she-her">She/Her</option>
+                                <option value="he-him">He/Him</option>
+                                <option value="other">Other</option>
+                                <option value="no-answer" selected> </option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <fieldset>
+                                <legend>Contact Preferences: </legend>
+                                    <input type="radio" id="pref-email" name="preference" value="email" checked>
+                                    <label for="pref-email">Email</label>
+
+                                    <input type="radio" id="pref-tel" name="preference" value="tel">
+                                    <label for="pref-tel">Call</label>
+
+                                    <input type="radio" id="pref-text" name="preference" value="text">
+                                    <label for="pref-text">Text</label>
+                            </fieldset>
+                        </div>
+
+                        <div>
+                            <label for="contact-message">Message: </label>
+                            <textarea id="contact-message" name="message" cols="30" rows="10">
+                            </textarea>
+                        </div>
+
+                        <div>
+                            <input id="contact-submit" class="pointer" type="submit" value="submit">
+                        </div>
+
+                        <div data-netlify-recaptcha="true">
+                        </div>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+    <footer id="flexFooter">
+        {{ partial "footer.html" . }}
+    </footer>
+</body>
+</html>
